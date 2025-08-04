@@ -1,0 +1,23 @@
+--For Creating DataBases 
+Create Database Task
+Use Task    -- For Using DataBase
+
+-- Creating Table
+
+-- Authors Table
+CREATE TABLE Authors (
+    author_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+-- Books Table
+CREATE TABLE Books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    author_id INT,
+    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
+);
+
+-- ER Diagram
+
+Author (1) ──── (Many) Book   -- ONE TO MANY Relationship
