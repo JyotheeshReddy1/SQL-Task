@@ -1,1 +1,22 @@
+-- Inserting Values
+INSERT INTO Customers(CustomerID, Name, Email, Phone) VALUES
+(1, 'Alice', 'alice@example.com', '1234567890'),
+(2, 'Bob', 'bob@example.com', NULL),
+(3, 'Charlie', NULL, '9876543210'),
+(4, 'Diana', 'diana@example.com', DEFAULT); 
 
+-- Updating Values
+UPDATE Customers
+SET Phone = '1112223333'
+WHERE CustomerID = 2;
+
+UPDATE Customers
+SET Email = 'charlie@gmail.com'
+WHERE CustomerID = 3;
+
+-- Deleting Values
+DELETE FROM Customers
+WHERE Email IS NULL;
+
+DELETE FROM Customers
+WHERE CustomerID = 2;
