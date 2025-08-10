@@ -1,0 +1,55 @@
+--Extract data from one or more tables.--
+
+-- database: "School"
+-- Table: students(id, first_name, last_name, age, grade, city)
+
+-- 1. Select all columns from students table
+SELECT * 
+FROM students;
+
+-- 2. Select specific columns
+SELECT first_name, last_name, grade 
+FROM students;
+
+-- 3. Apply WHERE condition (single)
+SELECT * 
+FROM students
+WHERE grade = 'A';
+
+-- 4. Apply multiple conditions with AND
+SELECT * 
+FROM students
+WHERE grade = 'A' 
+  AND age > 15;
+
+-- 5. Multiple conditions with OR
+SELECT * 
+FROM students
+WHERE grade = 'A' 
+   OR grade = 'B';
+
+-- 6. Use LIKE for pattern matching
+SELECT * 
+FROM students
+WHERE first_name LIKE 'J%';  -- Names starting with J
+
+-- 7. Use BETWEEN for range
+SELECT * 
+FROM students
+WHERE age BETWEEN 14 AND 17;
+
+-- 8. Sort results in ascending order
+SELECT * 
+FROM students
+ORDER BY age ASC;
+
+-- 9. Sort results in descending order
+SELECT * 
+FROM students
+ORDER BY grade DESC;
+
+-- 10. Limit number of results
+SELECT * 
+FROM students
+ORDER BY age DESC
+LIMIT 5;
